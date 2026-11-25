@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="de" data-ready="true">
+  <head>
+    <meta charset="UTF-8" />
+    <script>document.documentElement.classList.add("js")</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kontakt zu Jens Hoffmann, Abgeordneter für Lichterfelde West und Zehlendorf Süd: Schreib direkt über das Formular – mit Eingangsbestätigung per E-Mail." />
+    <meta name="author" content="Jens Hoffmann" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#52B7C1" />
+
+    <title>Kontakt – Jens Hoffmann</title>
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:title" content="Kontakt – Jens Hoffmann" />
+    <meta property="og:description" content="Du hast ein Anliegen, eine Idee oder Kritik? Schreib mir direkt." />
+    <meta property="og:image" content="/CDU-LOGO_1200x675px_2026-1.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="675" />
+    <meta property="og:site_name" content="Jens Hoffmann" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="module" crossorigin src="/assets/main-D9YzFPxZ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-D0NEMW_q.css">
+    <link rel="stylesheet" href="/assets/unterseiten.css">
+  </head>
+
+  <body>
+    <div class="site">
+      <header class="topbar">
+        <div class="menu-pill">
+          <button class="menu-pill__backdrop" type="button" tabindex="-1" aria-hidden="true"></button>
+          <button class="menu-pill__toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Menü öffnen">
+            <span class="menu-pill__icon" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+          </button>
+          <nav class="menu-pill__panel" id="site-menu" aria-label="Hauptmenü" inert>
+            <ul class="menu-pill__list">
+              <li class="menu-pill__item" style="--i:0"><a href="index.html">Start</a></li>
+              <li class="menu-pill__item" style="--i:1"><a href="aufgaben.html">Was mach ich eigentlich?</a></li>
+              <li class="menu-pill__item" style="--i:2"><a href="parlamentsreporte.html">Parlamentsreporte</a></li>
+              <li class="menu-pill__item" style="--i:3"><a href="parlamentarische-reise.html">Meine Reise</a></li>
+              <li class="menu-pill__item" style="--i:4"><a href="kontakt.html" aria-current="page">Kontakt</a></li>
+              <li class="menu-pill__item" style="--i:5"><a href="impressum.html">Impressum</a></li>
+              <li class="menu-pill__item" style="--i:6"><a href="datenschutz.html">Datenschutz</a></li>
+            </ul>
+            <p class="menu-pill__foot">#kiezfüralle · Danke für dein Vertrauen</p>
+          </nav>
+        </div>
+      </header>
+
+      <main id="start" class="contact">
+        <!-- ============ LINKS: Kontakt (auf Desktop sticky) ============ -->
+        <aside class="contact__aside" aria-labelledby="kontakt-title">
+          <h1 class="page-hero__title contact__title" id="kontakt-title">
+            <span class="mask"><span class="line line--1">Kontakt<span class="page-hero__dot">.</span></span></span>
+          </h1>
+
+          <p class="contact__lead" data-split-lines>
+            Du hast ein Anliegen, eine Idee oder Kritik? Schreib mir direkt über das Formular. Die Nachricht landet sofort bei mir,
+            und du bekommst eine Bestätigung per E-Mail.
+          </p>
+
+        </aside>
+
+        <!-- ============ RECHTS: Formular ============ -->
+        <section class="contact__main" aria-labelledby="form-title">
+          <div class="form-card glass">
+            <form class="form" id="kontakt-form" action="/api/kontakt.php" method="post" novalidate>
+              <h2 class="form__title" id="form-title">Nachricht schreiben</h2>
+
+              <div class="form__row">
+                <div class="field">
+                  <label class="field__label" for="f-name">Name</label>
+                  <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="120" aria-describedby="f-name-error" />
+                  <p class="field__error" id="f-name-error">Bitte gib deinen Namen an.</p>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="f-email">E-Mail</label>
+                  <input class="field__input" id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254" aria-describedby="f-email-error" />
+                  <p class="field__error" id="f-email-error">Bitte gib eine gültige E-Mail-Adresse an.</p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="f-tel">Telefon <span class="field__optional">optional</span></label>
+                <input class="field__input" id="f-tel" name="telefon" type="tel" autocomplete="tel" inputmode="tel" maxlength="60" />
+              </div>
+
+              <div class="field">
+                <div class="field__head">
+                  <label class="field__label" for="f-msg">Nachricht</label>
+                  <span class="field__count" aria-hidden="true"><span data-count>0</span>&thinsp;/&thinsp;5000</span>
+                </div>
+                <textarea class="field__input field__input--area" id="f-msg" name="nachricht" rows="7" required minlength="10" maxlength="5000" aria-describedby="f-msg-error"></textarea>
+                <p class="field__error" id="f-msg-error">Bitte schreib eine Nachricht (mindestens 10 Zeichen).</p>
+              </div>
+
+              <div class="field">
+                <label class="consent">
+                  <input type="checkbox" name="datenschutz" value="ja" required aria-describedby="f-consent-error" />
+                  <span>
+                    Ich bin einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage verarbeitet werden.
+                    Mehr dazu in der <a href="datenschutz.html#kontaktformular">Datenschutzerklärung</a>.
+                  </span>
+                </label>
+                <p class="field__error" id="f-consent-error">Bitte stimme zu, damit ich dir antworten kann.</p>
+              </div>
+
+              <!-- Spam-Schutz: für Menschen unsichtbar -->
+              <div class="hp" aria-hidden="true">
+                <label for="f-website">Website</label>
+                <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+              <input type="hidden" name="elapsed" value="" />
+
+              <div class="form__foot">
+                <button class="form__submit" type="submit">
+                  <span class="form__submit-label">Nachricht senden</span>
+                  <svg class="icon icon--inline" aria-hidden="true"><use href="/assets/icons.svg#i-arrow-right"/></svg>
+                </button>
+                <p class="form__status" role="status" aria-live="polite" data-status></p>
+              </div>
+            </form>
+
+            <!-- Erfolg: per JS oder ohne JS über /kontakt.html#gesendet -->
+            <div class="form-done" id="gesendet" tabindex="-1" hidden>
+              <span class="icon-tile icon-tile--lg icon-tile--accent" aria-hidden="true"><svg class="icon"><use href="/assets/icons.svg#i-check-circle"/></svg></span>
+              <h2 class="form-done__title" data-done-title>Danke für deine Nachricht!</h2>
+              <p class="form-done__text" data-done-text>Sie ist bei mir angekommen. Eine Bestätigung ist per E-Mail an dich unterwegs.</p>
+              <a class="form-done__again" href="kontakt.html" data-again>Neue Nachricht schreiben</a>
+            </div>
+
+            <!-- Fehler ohne JS: /kontakt.html#fehler -->
+            <p class="form-fail" id="fehler" hidden>
+              Die Nachricht konnte leider nicht gesendet werden. Bitte versuch es später noch einmal oder schreib direkt an
+              <a href="mailto:vorsitzender@cdu-lichterfelde.de">vorsitzender@cdu-lichterfelde.de</a>.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <!-- ============ CTA ============ -->
+      <section class="cta slab cv" id="sprechen" aria-labelledby="sprechen-title">
+        <span class="slab__bg" aria-hidden="true"></span>
+        <p class="cta__tag reveal">#kiezfüralle</p>
+        <h2 class="cta__date reveal" id="sprechen-title">Komm mit.</h2>
+        <p class="cta__sub reveal">Kleine Einblicke aus dem Abgeordnetenhaus, Schritt für Schritt, seit dem ersten Tag.</p>
+        <a class="cta__btn cta__btn--icon reveal" href="parlamentarische-reise.html">Zu meiner Reise <svg class="icon icon--inline" aria-hidden="true"><use href="/assets/icons.svg#i-arrow-right"/></svg></a>
+      </section>
+
+      <div class="footer-anchor" aria-hidden="true"></div>
+    </div>
+
+    <!-- ============ FOOTER: fix + dunkel, Curtain-Reveal ============ -->
+    <footer class="footer" aria-labelledby="footer-title">
+      <h2 id="footer-title" class="sr-only">Kontakt</h2>
+
+      <div class="footer__cta wrap" id="kontakt">
+        <p class="footer__lead">
+          <span class="footer__hint">Sprechen wir.</span>
+          <a class="footer__mail" href="mailto:vorsitzender@cdu-lichterfelde.de">vorsitzender@cdu-lichterfelde.de</a>
+          <a class="footer__mail" href="mailto:hoffmann@cdu-fraktion-berlin.de">hoffmann@cdu-fraktion-berlin.de</a>
+        </p>
+        <p class="footer__vote">
+          <span class="footer__votetag">#kiezfüralle</span>
+          <span class="footer__votedate">Danke für dein Vertrauen</span>
+        </p>
+      </div>
+
+      <div class="footer__meta wrap">
+        <nav class="footer__col" aria-label="Fußzeile">
+          <p class="footer__colhead">Seiten</p>
+          <ul>
+            <li><a href="index.html">Start</a></li>
+            <li><a href="aufgaben.html">Was mach ich eigentlich?</a></li>
+            <li><a href="parlamentsreporte.html">Parlamentsreporte</a></li>
+            <li><a href="parlamentarische-reise.html">Meine Reise</a></li>
+            <li><a href="kontakt.html" aria-current="page">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col">
+          <p class="footer__colhead">Kanäle</p>
+          <ul>
+            <li><a href="https://www.instagram.com/jens.hoffmann.mda/" target="_blank" rel="noopener noreferrer me">Instagram</a></li>
+            <li><a href="https://www.cdu-lichterfelde.de" target="_blank" rel="noopener noreferrer">CDU Lichterfelde</a></li>
+            <li><a href="https://www.cdusz.de" target="_blank" rel="noopener noreferrer">CDU Steglitz-Zehlendorf</a></li>
+            <li><a href="https://cdu.berlin" target="_blank" rel="noopener noreferrer">CDU Berlin</a></li>
+            <li><a href="https://cdu-fraktion-berlin.de" target="_blank" rel="noopener noreferrer">CDU-Fraktion Berlin</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__colhead">Rechtliches</p>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__wordwrap" aria-hidden="true">
+        <p class="footer__wordmark">Jens Hoffmann</p>
+      </div>
+
+      <div class="footer__base wrap">
+        <p>© 2026 Jens Hoffmann · Wahlkreis 3 · Lichterfelde West &amp; Zehlendorf Süd</p>
+        <a href="https://devdesignstudio.de" target="_blank" rel="noopener noreferrer">von DEVDESIGN</a>
+      </div>
+    </footer>
+
+    <!-- Einleitung: Zeile für Zeile aus einer Maske (overflow: clip) nach oben -->
+    <script type="module">
+      const el = document.querySelector("[data-split-lines]");
+      const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (el && !reduce) {
+        const text = el.textContent.trim().replace(/\s+/g, " ");
+        const split = () => {
+          // Wörter messen, nach Zeilen (offsetTop) gruppieren, jede Zeile maskieren
+          el.innerHTML = text.split(" ").map((w) => `<span class="sl-word">${w}</span>`).join(" ");
+          const lines = [];
+          let top = null;
+          el.querySelectorAll(".sl-word").forEach((word) => {
+            if (word.offsetTop !== top) { lines.push([]); top = word.offsetTop; }
+            lines[lines.length - 1].push(word.textContent);
+          });
+          el.innerHTML = lines
+            .map((line, i) => `<span class="sl-mask"><span class="sl-line" style="--li:${i}">${line.join(" ")}</span></span>`)
+            .join("");
+          // Nach der Animation wieder normaler Fließtext (bricht bei Größenänderung korrekt um)
+          el.lastElementChild?.firstElementChild?.addEventListener("animationend", () => (el.textContent = text), { once: true });
+          el.classList.add("is-split");
+        };
+        document.fonts.ready.then(split);
+      }
+    </script>
+
+    <!-- Formular: Prüfung im Browser + Versand ohne Neuladen -->
+    <script type="module">
+      const form = document.getElementById("kontakt-form");
+      const done = document.getElementById("gesendet");
+      const status = form.querySelector("[data-status]");
+      const button = form.querySelector(".form__submit");
+      const label = form.querySelector(".form__submit-label");
+      const message = form.elements.nachricht;
+      const count = form.querySelector("[data-count]");
+      const started = performance.now();
+      class ServerMessage extends Error {}
+
+      const updateCount = () => (count.textContent = message.value.length);
+      message.addEventListener("input", updateCount);
+      updateCount();
+
+      const setBusy = (busy) => {
+        button.disabled = busy;
+        form.toggleAttribute("aria-busy", busy);
+        label.textContent = busy ? "Wird gesendet …" : "Nachricht senden";
+      };
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        status.textContent = "";
+        form.classList.remove("is-error");
+
+        if (!form.checkValidity()) {
+          form.classList.add("was-validated");
+          form.querySelector(":invalid")?.focus();
+          return;
+        }
+
+        form.elements.elapsed.value = String(Math.round(performance.now() - started));
+        setBusy(true);
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" },
+          });
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok || !data.ok) throw new ServerMessage(data.message);
+
+          const name = form.elements.name.value.trim().split(/\s+/)[0];
+          const email = form.elements.email.value.trim();
+          done.querySelector("[data-done-title]").textContent = `Danke, ${name}!`;
+          done.querySelector("[data-done-text]").textContent =
+            `Deine Nachricht ist bei mir angekommen. Eine Bestätigung ist an ${email} unterwegs.`;
+          form.hidden = true;
+          done.hidden = false;
+          done.focus();
+          form.reset();
+          updateCount();
+        } catch (error) {
+          form.classList.add("is-error");
+          status.textContent =
+            error instanceof ServerMessage && error.message
+              ? error.message
+              : "Die Nachricht konnte gerade nicht gesendet werden. Bitte versuch es später noch einmal oder schreib direkt an vorsitzender@cdu-lichterfelde.de.";
+        } finally {
+          setBusy(false);
+        }
+      });
+
+      done.querySelector("[data-again]").addEventListener("click", (event) => {
+        event.preventDefault();
+        done.hidden = true;
+        form.hidden = false;
+        form.classList.remove("was-validated");
+        form.elements.name.focus();
+      });
+    </script>
+  </body>
+</html>
