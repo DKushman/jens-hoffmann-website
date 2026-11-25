@@ -327,7 +327,7 @@ html[data-ready] .page-media__frame img {
 
 .report__badge {
   padding: 0.45em 0.8em;
-  border-radius: 999px;
+  border-radius: 0;
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -527,18 +527,14 @@ html[data-ready] .page-media__frame img {
 }
 
 .glass-nav,
-.trip__card,
-.trip__handle,
-.role__mediacap {
+.trip__card {
   -webkit-backdrop-filter: blur(18px) saturate(170%);
   backdrop-filter: blur(18px) saturate(170%);
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .glass-nav,
-  .trip__card,
-  .trip__handle,
-  .role__mediacap {
+  .trip__card {
     --glass-bg: rgb(255 255 255 / 0.88);
   }
 }
@@ -664,9 +660,15 @@ html[data-ready] .page-media__frame img {
    5. Meine Aufgaben
    ========================================================== */
 
-/* Glas-Navigation (Legende) über dem Kopfbild, unten links
-   (.page-top ist Bezugsrahmen; das Bild ist sein letztes Flow-Element) */
-.page-top > .glass-nav {
+/* Glas-Navigation (Legende) über dem Kopfbild, unten links.
+   .page-legend folgt direkt auf .page-top und ist 0 hoch → ihre Oberkante
+   ist die Bildunterkante; die Nav hängt von dort nach oben ins Bild. */
+.page-legend {
+  position: relative;
+  height: 0;
+}
+
+.page-legend > .glass-nav {
   position: absolute;
   left: var(--px);
   bottom: clamp(1rem, 2.2vw, 1.75rem);
@@ -765,7 +767,7 @@ html[data-ready] .page-media__frame img {
   align-items: center;
   gap: 0.5em;
   padding: 0.55em 0.95em;
-  border-radius: 999px;
+  border-radius: 0;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -912,21 +914,6 @@ html[data-ready] .page-media__frame img {
   object-fit: cover;
   object-position: center 40%;
   background: #dddcd7;
-}
-
-.role__mediacap {
-  --glass-bg: rgb(255 255 255 / 0.4);
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0.55rem 0.95rem;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--ink);
 }
 
 /* 04: Manifest-Zeilen kompakter, auf hellem Grund */
@@ -1101,21 +1088,6 @@ html[data-ready] .page-media__frame img {
   max-height: min(82svh, 52rem);
   object-fit: cover;
   object-position: center 30%;
-}
-
-.trip__handle {
-  --glass-bg: rgb(255 255 255 / 0.38);
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 0.85rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--ink);
 }
 
 .trip__card {
@@ -1656,7 +1628,11 @@ html[data-ready] .contact .line {
    9. Responsive
    ========================================================== */
 @media (max-width: 1060px) {
-  .page-top > .glass-nav {
+  .page-legend {
+    height: auto;
+  }
+
+  .page-legend > .glass-nav {
     position: relative;
     left: auto;
     right: auto;
@@ -1842,8 +1818,9 @@ html[data-ready] .contact .line {
     margin-top: clamp(1rem, 4vw, 1.5rem);
   }
 
-  .page-top > .glass-nav {
-    margin: 0;
+  /* Legende unter dem ersten Screen, nicht mehr übers Bild gezogen */
+  .page-legend > .glass-nav {
+    margin: 0 var(--px);
   }
 }
 
