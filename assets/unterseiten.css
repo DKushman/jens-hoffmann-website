@@ -1809,12 +1809,16 @@ html[data-ready] .contact .line {
    der Block statt das Bild zu zerquetschen (min-height am Bild). */
 @media (max-width: 760px) {
   .page-top {
+    /* Oberer Streifen fürs Menü-Symbol: gleiche Werte wie .menu-pill__toggle
+       (top + Padding oben/unten + 14px Icon) → Symbol sitzt exakt mittig
+       zwischen Bildschirmkante und Bild, frei auf dem hellen Grund. */
+    --menu-band: calc(2 * (clamp(1.35rem, 2.8vw, 1.9rem) + 0.55rem) + 14px);
     display: flex;
     flex-direction: column;
     gap: clamp(1.25rem, 5vw, 1.75rem);
     min-height: 100vh; /* Fallback für alte Browser */
     min-height: 100dvh;
-    padding: var(--px);
+    padding: var(--menu-band) var(--px) var(--px);
   }
 
   .page-top > .page-media {

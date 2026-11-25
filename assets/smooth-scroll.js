@@ -17,6 +17,9 @@
  * Opt-out für einzelne Bereiche: Attribut data-smooth-prevent.
  */
 (() => {
+  // Nur Maus/Trackpad-Geräte (wird auf Handys/Tablets gar nicht erst geladen – doppelt abgesichert)
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
   const root = document.documentElement;
 
