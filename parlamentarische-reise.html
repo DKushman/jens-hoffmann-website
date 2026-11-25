@@ -38,6 +38,8 @@
     <script type="module" crossorigin src="assets/main-D9YzFPxZ.js"></script>
     <link rel="stylesheet" crossorigin href="assets/main-D0NEMW_q.css">
     <link rel="stylesheet" href="assets/unterseiten.css">
+    <script defer src="assets/smooth-scroll.js"></script>
+    <script type="speculationrules">{"prefetch":[{"where":{"and":[{"selector_matches":"a[href*=\".html\"]"},{"not":{"selector_matches":"[target=_blank], [download]"}}]},"eagerness":"moderate"}]}</script>
   </head>
 
   <body>
@@ -66,39 +68,40 @@
       </header>
 
       <main id="start">
-        <!-- ============ KOPF: große H1 + Meta-Zeile ============ -->
-        <section class="page-hero" aria-labelledby="reise-title">
-          <h1 class="page-hero__title" id="reise-title">
-            <span class="mask"><span class="line line--1">Meine Reise<span class="page-hero__dot">.</span></span></span>
-          </h1>
+        <div class="page-top">
+          <!-- ============ KOPF: große H1 + Meta-Zeile ============ -->
+          <section class="page-hero" aria-labelledby="reise-title">
+            <h1 class="page-hero__title" id="reise-title">
+              <span class="mask"><span class="line line--1">Meine Reise<span class="page-hero__dot">.</span></span></span>
+            </h1>
 
-          <div class="page-hero__meta">
-            <p>(Schritt für Schritt ins Abgeordnetenhaus)</p>
-            <a href="#etappen">Zu den Etappen</a>
-          </div>
-        </section>
+            <div class="page-hero__meta">
+              <p>(Schritt für Schritt ins Abgeordnetenhaus)</p>
+              <a href="#etappen">Zu den Etappen</a>
+            </div>
+          </section>
 
-        <!-- ============ BILD: volle Breite ============ -->
-        <figure class="page-media">
-          <div class="page-media__frame">
-            <picture>
-              <source media="(max-width: 760px)" type="image/avif" srcset="assets/hero/plenarsaal-m-800.avif 800w, assets/hero/plenarsaal-m-1200.avif 1200w" sizes="100vw" />
-              <source media="(max-width: 760px)" srcset="assets/hero/plenarsaal-m-800.jpg 800w, assets/hero/plenarsaal-m-1200.jpg 1200w" sizes="100vw" />
-              <source type="image/avif" srcset="assets/hero/plenarsaal-d-1600.avif 1600w, assets/hero/plenarsaal-d-2400.avif 2400w, assets/hero/plenarsaal-d-3072.avif 3072w" sizes="100vw" />
-              <img
-                src="assets/hero/plenarsaal-d-2400.jpg"
-                srcset="assets/hero/plenarsaal-d-1600.jpg 1600w, assets/hero/plenarsaal-d-2400.jpg 2400w, assets/hero/plenarsaal-d-3072.jpg 3072w"
-                sizes="100vw"
-                alt="Jens Hoffmann im Plenarsaal des Abgeordnetenhauses von Berlin"
-                width="3072"
-                height="1728"
-                fetchpriority="high"
-                decoding="async"
-              />
-            </picture>
-          </div>
-          <figcaption class="page-media__caption">Plenarsaal · Abgeordnetenhaus von Berlin</figcaption>
-        </figure>
+          <!-- ============ BILD: volle Breite ============ -->
+          <figure class="page-media">
+            <div class="page-media__frame">
+              <picture>
+                <source media="(max-width: 760px)" type="image/avif" srcset="assets/hero/plenarsaal-m-800.avif 800w, assets/hero/plenarsaal-m-1200.avif 1200w" sizes="100vw" />
+                <source media="(max-width: 760px)" srcset="assets/hero/plenarsaal-m-800.jpg 800w, assets/hero/plenarsaal-m-1200.jpg 1200w" sizes="100vw" />
+                <source type="image/avif" srcset="assets/hero/plenarsaal-d-1600.avif 1600w, assets/hero/plenarsaal-d-2400.avif 2400w, assets/hero/plenarsaal-d-3072.avif 3072w" sizes="100vw" />
+                <img
+                  src="assets/hero/plenarsaal-d-2400.jpg"
+                  srcset="assets/hero/plenarsaal-d-1600.jpg 1600w, assets/hero/plenarsaal-d-2400.jpg 2400w, assets/hero/plenarsaal-d-3072.jpg 3072w"
+                  sizes="100vw"
+                  alt="Jens Hoffmann im Plenarsaal des Abgeordnetenhauses von Berlin"
+                  width="3072"
+                  height="1728"
+                  fetchpriority="high"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+          </figure>
+        </div>
 
         <!-- ============ EINLEITUNG: Statement, rechtsbündig ============ -->
         <section class="statement statement--right cv" aria-labelledby="reise-intro-title">

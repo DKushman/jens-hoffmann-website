@@ -41,6 +41,8 @@
     <script type="module" crossorigin src="assets/main-D9YzFPxZ.js"></script>
     <link rel="stylesheet" crossorigin href="assets/main-D0NEMW_q.css">
     <link rel="stylesheet" href="assets/unterseiten.css">
+    <script defer src="assets/smooth-scroll.js"></script>
+    <script type="speculationrules">{"prefetch":[{"where":{"and":[{"selector_matches":"a[href*=\".html\"]"},{"not":{"selector_matches":"[target=_blank], [download]"}}]},"eagerness":"moderate"}]}</script>
   </head>
 
   <body>
@@ -69,33 +71,35 @@
       </header>
 
       <main id="start">
-        <!-- ============ KOPF: große H1 + Meta-Zeile ============ -->
-        <section class="page-hero" aria-labelledby="aufgaben-title">
-          <h1 class="page-hero__title" id="aufgaben-title">
-            <span class="mask"><span class="line line--1">Was mach ich</span></span>
-            <span class="mask"><span class="line line--2">eigentlich<span class="page-hero__dot">?</span></span></span>
-          </h1>
+        <div class="page-top">
+          <!-- ============ KOPF: große H1 + Meta-Zeile ============ -->
+          <section class="page-hero" aria-labelledby="aufgaben-title">
+            <h1 class="page-hero__title" id="aufgaben-title">
+              <span class="mask"><span class="line line--1">Was mach ich</span></span>
+              <span class="mask"><span class="line line--2">eigentlich<span class="page-hero__dot">?</span></span></span>
+            </h1>
 
-          <div class="page-hero__meta">
-            <p>(Abgeordneter · Hauptausschuss · CDU Lichterfelde)</p>
-            <a class="page-hero__cta" href="#sprechen">Sprechen wir <svg class="icon icon--inline" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"/></svg></a>
-          </div>
-        </section>
+            <div class="page-hero__meta">
+              <p>(Abgeordneter · Hauptausschuss · CDU Lichterfelde)</p>
+              <a class="page-hero__cta" href="#sprechen">Sprechen wir <svg class="icon icon--inline" aria-hidden="true"><use href="assets/icons.svg#i-arrow-right"/></svg></a>
+            </div>
+          </section>
 
-        <!-- ============ BILD: volle Breite + Glas-Navigation ============ -->
-        <figure class="page-media page-media--panel">
-          <div class="page-media__frame">
-            <img
-              src="https://res.cloudinary.com/dqcdbdt4v/image/upload/f_auto,q_auto:good,w_1600/v1795360928/210807mellenthin_cdu_lichterfelde0024_Monitor_jionzk.webp"
-              srcset="https://res.cloudinary.com/dqcdbdt4v/image/upload/f_auto,q_auto:good,w_800/v1795360928/210807mellenthin_cdu_lichterfelde0024_Monitor_jionzk.webp 800w, https://res.cloudinary.com/dqcdbdt4v/image/upload/f_auto,q_auto:good,w_1200/v1795360928/210807mellenthin_cdu_lichterfelde0024_Monitor_jionzk.webp 1200w, https://res.cloudinary.com/dqcdbdt4v/image/upload/f_auto,q_auto:good,w_1600/v1795360928/210807mellenthin_cdu_lichterfelde0024_Monitor_jionzk.webp 1600w, https://res.cloudinary.com/dqcdbdt4v/image/upload/f_auto,q_auto:good,w_2400/v1795360928/210807mellenthin_cdu_lichterfelde0024_Monitor_jionzk.webp 2400w"
-              sizes="100vw"
-              alt="Jens Hoffmann mit Mitgliedern der CDU Lichterfelde am Infostand im Kiez"
-              width="2400"
-              height="1602"
-              fetchpriority="high"
-              decoding="async"
-            />
-          </div>
+          <!-- ============ BILD: volle Breite + Glas-Navigation ============ -->
+          <figure class="page-media page-media--panel">
+            <div class="page-media__frame">
+              <img
+                src="https://res.cloudinary.com/dqcdbdt4v/image/upload/f_auto,q_auto:good,w_1600/v1795360928/210807mellenthin_cdu_lichterfelde0024_Monitor_jionzk.webp"
+                srcset="https://res.cloudinary.com/dqcdbdt4v/image/upload/f_auto,q_auto:good,w_800/v1795360928/210807mellenthin_cdu_lichterfelde0024_Monitor_jionzk.webp 800w, https://res.cloudinary.com/dqcdbdt4v/image/upload/f_auto,q_auto:good,w_1200/v1795360928/210807mellenthin_cdu_lichterfelde0024_Monitor_jionzk.webp 1200w, https://res.cloudinary.com/dqcdbdt4v/image/upload/f_auto,q_auto:good,w_1600/v1795360928/210807mellenthin_cdu_lichterfelde0024_Monitor_jionzk.webp 1600w, https://res.cloudinary.com/dqcdbdt4v/image/upload/f_auto,q_auto:good,w_2400/v1795360928/210807mellenthin_cdu_lichterfelde0024_Monitor_jionzk.webp 2400w"
+                sizes="100vw"
+                alt="Jens Hoffmann mit Mitgliedern der CDU Lichterfelde am Infostand im Kiez"
+                width="2400"
+                height="1602"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </div>
+          </figure>
 
           <nav class="glass-nav glass" aria-label="Auf dieser Seite">
             <ol class="glass-nav__list">
@@ -125,7 +129,7 @@
               </li>
             </ol>
           </nav>
-        </figure>
+        </div>
 
         <!-- ============ 01 · ABGEORDNETER ============ -->
         <section class="role role--glow-a cv" id="abgeordneter" aria-labelledby="role-1-title">
