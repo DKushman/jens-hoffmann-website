@@ -15,10 +15,11 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Getrennte Jobs (offizielle GitHub-Vorlage): Der Deploy startet erst, wenn
+  # das Artifact vollständig hochgeladen und registriert ist. In einem einzigen
+  # Job fand deploy-pages das frische Artifact teils nicht ("No artifacts named
+  # github-pages were found").
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -29,6 +30,14 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
