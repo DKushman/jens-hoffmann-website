@@ -1,27 +1,6 @@
 # Keine Verzeichnisliste
 Options -Indexes
 
-# Nur kontakt.php ausführen; keine anderen Skripte in /api/
-<FilesMatch "\.php$">
-  <IfModule mod_authz_core.c>
-    Require all denied
-  </IfModule>
-  <IfModule !mod_authz_core.c>
-    Order deny,allow
-    Deny from all
-  </IfModule>
-</FilesMatch>
-
-<Files "kontakt.php">
-  <IfModule mod_authz_core.c>
-    Require all granted
-  </IfModule>
-  <IfModule !mod_authz_core.c>
-    Order allow,deny
-    Allow from all
-  </IfModule>
-</Files>
-
 # Dateien mit "_" am Anfang (z. B. _config.php mit den SMTP-Zugangsdaten) nie ausliefern
 <FilesMatch "^_">
   <IfModule mod_authz_core.c>
