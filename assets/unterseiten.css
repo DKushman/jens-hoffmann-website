@@ -24,6 +24,12 @@
   border-radius: 0;
 }
 
+/* Startseite: Kiez-Karte — kantige Pins */
+.map__dotnum,
+.map__dot:focus-visible {
+  border-radius: 0;
+}
+
 /* Slab-Hintergrund: volle Fläche (inset hing vorher von --slab-r ab → CTA ohne Türkis) */
 .slab__bg {
   inset: 0;
@@ -189,6 +195,21 @@ html[data-ready] .page-media__frame img {
         page-parallax linear both;
       animation-timeline: auto, --page-media;
       animation-range: normal, cover 0% cover 100%;
+    }
+
+    html[data-ready] .page-media__frame--group23 img {
+      inset: 0;
+      height: 100%;
+      animation: img-settle 1.6s var(--ease-lift) 0.3s both;
+      animation-timeline: auto;
+    }
+
+    @media (min-width: 761px) {
+      html[data-ready] .page-media__frame--group23 img {
+        position: relative;
+        inset: auto;
+        height: auto;
+      }
     }
   }
 }
@@ -659,6 +680,33 @@ html[data-ready] .page-media__frame img {
 /* ==========================================================
    5. Meine Aufgaben
    ========================================================== */
+
+/* Kopfbild Aufgaben (Group 23): Desktop volles Bild, Mobil wie andere Heroes */
+.page-media__frame--group23 {
+  view-timeline-name: none;
+}
+
+@media (min-width: 761px) {
+  .page-media__frame--group23 {
+    height: auto;
+    min-height: 0;
+  }
+
+  .page-media__frame--group23 img {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    object-fit: unset;
+    object-position: center;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-top .page-media__frame--group23 {
+    --focus-y: 82%;
+  }
+}
 
 /* Glas-Navigation (Legende) über dem Kopfbild, unten links.
    .page-legend folgt direkt auf .page-top und ist 0 hoch → ihre Oberkante
@@ -1741,6 +1789,17 @@ html[data-ready] .contact .line {
     line-height: 0.92;
   }
 
+  /* Langer einzeiliger Titel (Parlamentsreise) */
+  .page-hero__title--long {
+    font-size: clamp(1.85rem, 8.2vw, 3.35rem);
+    line-height: 0.94;
+    letter-spacing: -0.04em;
+  }
+
+  .page-hero__title--long .line {
+    text-wrap: balance;
+  }
+
   .page-media__frame {
     height: min(72svh, 36rem);
   }
@@ -1808,6 +1867,11 @@ html[data-ready] .contact .line {
     flex: 1 0 auto;
     height: auto;
     min-height: 16rem;
+  }
+
+  .page-top > .page-media.page-media--panel {
+    flex: 0 0 auto;
+    margin-top: clamp(1.5rem, 7vw, 2.75rem);
   }
 
   .page-top > .page-hero {
