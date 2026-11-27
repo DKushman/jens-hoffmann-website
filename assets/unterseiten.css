@@ -197,6 +197,20 @@ html[data-ready] .page-media__frame img {
       animation-range: normal, cover 0% cover 100%;
     }
 
+    /* Handy: kein Scroll-Parallax / kein „Zoom“ beim Wischen */
+    @media (max-width: 760px) {
+      .page-media__frame {
+        view-timeline-name: none;
+      }
+
+      html[data-ready] .page-media__frame img {
+        inset: 0;
+        height: 100%;
+        animation: img-settle 1.6s var(--ease-lift) 0.3s both;
+        animation-timeline: auto;
+      }
+    }
+
     html[data-ready] .page-media__frame--group23 img {
       inset: 0;
       height: 100%;
