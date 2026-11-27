@@ -1,0 +1,2 @@
+# Wird bei jedem IONOS-Deploy von GitHub Actions überschrieben.
+# Live prüfen: https://kiezfueralle.berlin/deploy-version.txt

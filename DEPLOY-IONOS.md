@@ -36,3 +36,25 @@ Unter Domain → **Verzeichnis / Stammverzeichnis** muss auf das **gleiche Heimv
 ## Konfiguration
 
 `_config.php` nur auf dem Server pflegen (nicht ins Git). Vorlage: `api/_config.example.php`.
+
+## Diagnose: Live noch alt?
+
+Im Terminal:
+
+```bash
+curl -sI https://kiezfueralle.berlin/parlamentsreporte.html | grep -i last-modified
+```
+
+Steht dort z. B. **23 Nov 2026**, wurde das **Webroot** seit dem nicht überschrieben (Upload lief ins falsche Ziel oder ist fehlgeschlagen).
+
+Lokal ist `parlamentsreporte.html` größer und enthält **„3 Ausgaben“** – nach erfolgreichem Deploy weicht Größe und Inhalt ab.
+
+**Deploy-Check nach Upload:** https://kiezfueralle.berlin/deploy-version.txt (Commit-Zeit, nur wenn Action oder rsync lief).
+
+## Automatisch per GitHub (empfohlen)
+
+1. GitHub → Repo **Settings** → **Secrets and variables** → **Actions** → **New repository secret**
+2. Name: `IONOS_SFTP_PASSWORD` (SFTP-Passwort des Users `su1205313`)
+3. Jeder **Push auf `main`** startet Workflow **Deploy IONOS** (SFTP ins Webroot)
+
+Ohne Secret schlägt der Workflow fehl – dann weiter `./deploy-ionos.sh` lokal nutzen.
