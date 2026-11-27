@@ -1,0 +1,7 @@
+# IONOS / Apache: Startseite + Verzeichnislisting aus
+DirectoryIndex index.html
+Options -Indexes +FollowSymLinks
+
+<IfModule mod_authz_core.c>
+  Require all granted
+</IfModule>

@@ -10,16 +10,43 @@ Wenn rsync in den Unterordner
 `jens-hoffmann-website-richtig nach meeting/`  
 geht, **ändert sich die öffentliche Seite nicht** (dieser Pfad ist nicht die Domain-Wurzel).
 
+## Schnell: ZIP im IONOS-Panel (wenn rsync hängt / 404)
+
+```bash
+./make-ionos-zip.sh
+```
+
+Erzeugt `kiezfueralle-deploy-YYYYMMDD.zip` im Projektordner.
+
+1. **IONOS** → Webspace → **Dateimanager**
+2. Ordner = **Stammverzeichnis** von kiezfueralle.berlin (da wo früher `index.html` lag)
+3. ZIP hochladen → **Entpacken**
+4. **`api/_config.php` auf dem Server nicht löschen** (Steuerungsdatei nur auf IONOS)
+
+---
+
+## „Forbidden“ / 403 / leere Seite
+
+Häufige Ursachen nach rsync:
+
+1. **`index.html` nicht im Stammverzeichnis** → Deploy bricht ab oder Zielordner falsch  
+2. **Dateirechte** → Deploy setzt jetzt `--chmod` (Ordner 755, Dateien 644)  
+3. **Stammverzeichnis = Unterordner** → `./deploy-ionos.sh` lädt **Webroot und Unterordner** hoch
+
+Im IONOS-Dateimanager: Liegt `index.html` **im Stammverzeichnis**, das das Panel für kiezfueralle.berlin zeigt?
+
 ## Hochladen (richtig)
 
-Im Terminal (IONOS-Passwort eingeben):
+Im Terminal (IONOS-Passwort **zweimal** eingeben – zwei Ziele):
 
 ```bash
 cd "/Users/davidjoelchiosea/Downloads/jens-hoffmann-website-richtig nach meeting"
 ./deploy-ionos.sh
 ```
 
-Das synchronisiert ins **SFTP-Heimverzeichnis** (= Webroot für die Domain).
+**Warten**, bis im Terminal **„✓ Upload fertig“** erscheint (sonst fehlen Dateien auf dem Server).
+
+Bei **404** auf der Startseite: Deploy **sofort nochmal** ausführen. Im IONOS-Dateimanager prüfen, ob im **Stammverzeichnis** `index.html` liegt.
 
 `api/_config.php` wird **nicht** überschrieben (bleibt die Server-Konfiguration).
 
