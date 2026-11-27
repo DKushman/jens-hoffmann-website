@@ -291,23 +291,24 @@ html[data-ready] .page-media__frame img {
   letter-spacing: -0.01em;
 }
 
-/* Ausgaben: Jahr links (sticky), Karten nebeneinander rechts */
+/* Ausgaben: Jahr über den Karten, einspaltig */
 .reports {
-  padding: clamp(3rem, 6vw, 5rem) var(--px) clamp(5rem, 10vw, 8rem);
+  padding: clamp(4.5rem, 9vw, 7rem) var(--px) clamp(5rem, 10vw, 8rem);
 }
 
 .reports__year {
   display: grid;
-  grid-template-columns: minmax(8rem, 22%) minmax(0, 1fr);
-  column-gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: clamp(1.25rem, 3vw, 2rem);
   align-items: start;
 }
 
 .reports__yearhead {
-  position: sticky;
-  top: clamp(4.5rem, 9vh, 6rem);
+  position: static;
   display: grid;
-  row-gap: 0.4rem;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  column-gap: 1rem;
 }
 
 .reports__yearlabel {
@@ -719,6 +720,17 @@ html[data-ready] .page-media__frame img {
 @media (max-width: 760px) {
   .page-top .page-media__frame--group23 {
     --focus-y: 82%;
+  }
+}
+
+/* Parlamentsreporte: Desktop Ausschnitt weiter oben */
+@media (min-width: 761px) {
+  .page-media__frame--preport {
+    --focus-y: 26%;
+  }
+
+  .page-media__frame--preport img {
+    object-position: center var(--focus-y, 26%);
   }
 }
 
